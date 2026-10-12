@@ -1,7 +1,7 @@
 # Subscription Retention and Customer Segmentation
 
 Renewal and retention analysis for FormWise, a made-up online legal-document subscription service. The data is
-simulated: `data/generate_data.py` builds ~8,500 subscribers and their payment history.
+simulated: generate_data.py builds ~8,500 subscribers and their payment history.
 
 ## Questions
 1. How well do monthly subscribers renew, and when do we lose them?
@@ -13,19 +13,19 @@ simulated: `data/generate_data.py` builds ~8,500 subscribers and their payment h
   aren't counted as churned).
 - Annual plan renewal rates.
 - Logistic regression for first renewal, reported as odds ratios with confidence intervals.
-- K-means segmentation on tenure, payments, documents created and lifetime revenue, with k chosen by silhouette
+- K-means segmentation on tenure, payments, documents created, and lifetime revenue, with k chosen by silhouette
   score.
 
 ## Findings
-- 35% of monthly subscribers cancel before their first renewal. After month 3 the curve flattens.
+- 35% of monthly subscribers cancel before their first renewal. After month 3, the curve flattens.
 - Creating 2+ documents in the first 30 days roughly **doubles the odds of renewing** (odds ratio 2.0). Mobile
   subscribers renew less, even at the same engagement level.
 - **Loyal monthly** subscribers are about 14% of customers but 43% of lifetime revenue. **One-and-done** users are
   almost half of all customers.
-- Annual plans were assumed to be more valuable. At current prices they aren't: a new monthly subscriber brings in
+- Annual plans were assumed to be more valuable. At current prices, they aren't: a new monthly subscriber brings in
   about **2.2x** as much in the first year ($209 vs $96).
 
-![Cohort retention](figures/cohort_heatmap.png)
+![Cohort retention]cohort_heatmap.png
 
 ## Recommendations
 1. Test an onboarding nudge toward a second document in the first 30 days.
